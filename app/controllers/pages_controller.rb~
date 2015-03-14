@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 def home
-    @hello = 'Hi there!'
+    @hello = 'Hi there 2222!'
 end
 
   def course

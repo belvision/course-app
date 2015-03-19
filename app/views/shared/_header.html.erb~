@@ -1,6 +1,4 @@
 <%= link_to 'Home', root_path %>
 <%= link_to 'Course', course_path %>
 <%= link_to 'Testimonials', testimonials_path %>
-<%= link_to 'checkin', checkin_path %>
-<%= link_to 'loginin', loginin_path %>
 

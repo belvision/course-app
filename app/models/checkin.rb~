@@ -1,0 +1,5 @@
+class Checkin < ActiveRecord::Base
+end
+ def show
+    @checkin = Checkin.find(params[:id])
+  end

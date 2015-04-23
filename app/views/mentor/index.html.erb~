@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>Welcome Admin!</h1>
+</div>
+
+<div class="jumbotron">
+<p>
+  This is a demo application for Ruby on Rails
+ <%= link_to 'login', 'http://localhost:3000/login',
+              target: '_blank', class: 'btn btn-primary btn-lg' %>
+</p>
+</div>
+

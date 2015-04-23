@@ -1,0 +1,20 @@
+class CheckinsController < ApplicationController
+
+  def index
+  end
+
+def new
+    @checkin = Checkins.new
+  end
+
+def create
+  @checkins = Checkins.new(checkin_params)
+  if @checkin.save
+    redirect_to @checkin
+  else
+    render 'new'
+  end
+end
+end
+
+

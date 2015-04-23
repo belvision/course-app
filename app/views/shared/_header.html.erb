@@ -1,6 +1,12 @@
-<%= link_to 'Home', root_path %>
-<%= link_to 'Course', course_path %>
-<%= link_to 'Testimonials', testimonials_path %>
-<%= link_to 'checkin', checkin_path %>
-<%= link_to 'loginin', loginin_path %>
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
 
+<li><%= link_to 'На Главную', root_path %></li>
+<li><%= link_to 'Вопросы и ответы', course_path %></li>
+<li><%= link_to 'Отзывы', testimonials_path %></li>
+<li><%= link_to 'Интеграция', checkin_path %></li>
+<li><%= link_to 'Возможности', loginin_path %></li>
+<li><%= link_to 'Вход', login_path %></li>
+<li><%= link_to 'mentor', mentor_path %></li>
+</ul>
+</nav>

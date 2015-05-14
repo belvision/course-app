@@ -1,0 +1,4 @@
+# app/views/course/show.html.erb
+<h1><%= @course.name %></h1>
+<p><span class="badge">Students count: <%= @course.students.count %></span></p>
+<%= render @course.students%>

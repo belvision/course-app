@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse">
-  <ul class="nav navbar-nav">
+  <ul class="nav navbar-nav navbar-left">
 
 <li><%= link_to 'На Главную', root_path %></li>
 <li><%= link_to 'Вопросы и ответы', course_path %></li>
@@ -8,5 +8,16 @@
 <li><%= link_to 'Возможности', loginin_path %></li>
 <li><%= link_to 'Вход', login_path %></li>
 <li><%= link_to 'mentor', mentor_path %></li>
+<li><%= link_to 'Students', students_path %></li>
+    <li><%= link_to 'Courses', courses_path %></li>
 </ul>
+
+  <% if session[:mentor_id] %>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to 'Admin', mentor_path %></li>
+        <li><%= button_to 'Logout', logout_path, method: :delete, class: 'btn navbar-btn' %></li>
+      </ul>
+  <% else %>
+      <%= link_to 'Логин', login_path, class: 'btn navbar-btn pull-right' %>
+  <% end %>
 </nav>

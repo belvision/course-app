@@ -1,5 +1,7 @@
 class MentorController < ApplicationController
+  before_action :authorize
   def index
-  
-end
+    @mentor = Mentor.find_by(id: session[:mentor_id])
+    @courses = @mentor.courses
+  end
 end

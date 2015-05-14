@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423154131) do
+ActiveRecord::Schema.define(version: 20150507180411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20150423154131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "mentor_id"
+  end
+
+  add_index "courses", ["mentor_id"], name: "index_courses_on_mentor_id", using: :btree
 
   create_table "mentors", force: :cascade do |t|
     t.string   "name"
@@ -35,7 +44,11 @@ ActiveRecord::Schema.define(version: 20150423154131) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "name"
+    t.integer  "course_id"
+    t.string   "heroku_app"
   end
+
+  add_index "students", ["course_id"], name: "index_students_on_course_id", using: :btree
 
   create_table "testimonials", force: :cascade do |t|
     t.string   "user_name"
@@ -44,4 +57,6 @@ ActiveRecord::Schema.define(version: 20150423154131) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "courses", "mentors"
+  add_foreign_key "students", "courses"
 end

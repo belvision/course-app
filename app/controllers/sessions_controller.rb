@@ -15,5 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:mentor_id] = nil
+    redirect_to root_url
   end
 end

@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   get 'courses/show'
 
 root  'pages#home'
-get 'course' => 'pages#course'
+#get 'course' => 'pages#course'
 get 'loginin' => 'pages#loginin'
 get 'checkin' => 'pages#checkin'
 get 'mentor' => 'mentor#index'
 
 
 resources :testimonials, only: [:index, :new, :show, :create, :destroy]
-  resources :courses, only: [:index, :new]
+  resources :courses, only: [:index, :new, :show]
 
 resources :students
 
